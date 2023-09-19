@@ -1,0 +1,76 @@
+# Simple deployment used to deploy and manage the app in nigelpoulton/getting-started-k8s:1.0
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-1-deploy
+  labels:
+    app: web1
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: web1
+  template:
+    metadata:
+      labels:
+        app: web1
+    spec: 
+      terminationGracePeriodSeconds: 1
+      containers:
+      - name: hello-pod
+        image: nigelpoulton/getting-started-k8s:1.0
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-2-deploy
+  labels:
+    app: web2
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: web2
+  template:
+    metadata:
+      labels:
+        app: web2
+    spec: 
+      terminationGracePeriodSeconds: 1
+      containers:
+      - name: hello-pod
+        image: nigelpoulton/getting-started-k8s:1.0
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-3-deploy
+  labels:
+    app: web3
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: web3
+  template:
+    metadata:
+      labels:
+        app: web3
+    spec: 
+      terminationGracePeriodSeconds: 1
+      containers:
+      - name: hello-pod
+        image: nigelpoulton/getting-started-k8s:1.0
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080

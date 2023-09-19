@@ -1,0 +1,4 @@
+## Append samples of your project ##
+resources:
+- newproj_v1_svcmergerobj.yaml
+#+kubebuilder:scaffold:manifestskustomizesamples

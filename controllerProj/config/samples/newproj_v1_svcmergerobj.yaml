@@ -1,0 +1,14 @@
+apiVersion: newproj.controller.proj/v1
+kind: SvcMergerObj
+metadata:
+  labels:
+    app.kubernetes.io/name: svcmergerobj
+    app.kubernetes.io/instance: svcmergerobj-sample-new
+    app.kubernetes.io/part-of: controllerproj
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: controllerproj
+  name: svcmergerobj-sample-new
+spec:
+  services:
+    - svcmergerobj-sample
+    - svcmergerobj-sample-new
